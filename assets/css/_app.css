@@ -59,22 +59,29 @@ Grid override.
 
 /*
 ================================================================================
-Header.
+Header. This is the top bar at the very top of the page.
 ================================================================================
 */
 
 header[role="banner"] {
-  background: #666;
+  border-top: 3px solid #f7922b;
+  background: #333;
   color: #fff;
   padding-top: 20px;
   padding-bottom: 20px;
-  line-height: 30px;
+  line-height: 38px;
 }
 
 header[role="banner"] h1 {
-  display: inline;
-  font-weight: normal;
   margin: 0;
+  line-height: inherit;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.t7-logo {
+  float: right;
+  height: 38px;
 }
 
 /*
@@ -89,35 +96,31 @@ main[role="main"] {
 
 /*
 ================================================================================
-Helpers.
-================================================================================
-*/
-
-.align-right {
-  text-align: right;
-}
-
-/*
-================================================================================
 Comp selector drop-down.
 ================================================================================
 */
 
+button,
 select {
-  background: none;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  color: #fff;
+  color: #f5f5f5;
   font-family: Arial, sans-serif;
   font-size: inherit;
   line-height: 1;
+  border-radius: 3px;
 
-  padding-top: 5px;
+  padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 
   max-width: 100%;
+  min-height: 38px;
+}
+
+select {
+  min-width: 200px;
+  border: 1px solid #f5f5f5;
+  background: none;
 }
 
 /* For WebKit. */
@@ -126,13 +129,37 @@ select {
     /* Undo default styling. */
     -webkit-appearance: none;
 
-    background-image: url("../images/comp-selector.png");
+    background-image: url("../images/comp-selector.svg");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: auto 100%;
 
     padding-right: 40px;
   }
+}
+
+.button-desktop, 
+.button-tablet, 
+.button-mobile {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  text-indent: -999px;
+  width: 38px;
+  border: 0;
+  background-color: rgba(222, 222, 222, 0.2);
+}
+
+.button-desktop {
+  background-image: url("../images/icon-desktop-gray.svg");
+}
+
+.button-tablet {
+  background-image: url("../images/icon-tablet-gray.svg");
+}
+
+.button-mobile {
+  background-image: url("../images/icon-mobile-gray.svg");
 }
 
 /*
@@ -243,4 +270,28 @@ Scrollbars, in WebKit.
 .screen-desktop::-webkit-scrollbar-thumb {
   background: #999;
   border-left: 1px solid #fff;
+}
+
+/*
+================================================================================
+This is the List Styling
+================================================================================
+*/
+
+.list-inline, 
+.list-inline li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-inline {
+  font-size: 0;
+  margin-left: -10px;
+}
+
+.list-inline li {
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 10px;
 }

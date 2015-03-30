@@ -17,41 +17,61 @@ Responsive Viewer
 
     <div class="grid-container">
 
-      <div class="grid-60">
+      <div class="grid-55">
 
-        <h1>
-          Responsive Viewer
-        </h1>
+        <ul class="list-inline">
+          <li>
+            <!--
+              NOTE: THIS IS THE DROPDOWN MENU
+
+              Put the name of respective "file.jpg"
+              in the value="…" of each <option>.
+            -->
+
+            <select class="comp-selector">
+              <option value="home.jpg">
+                Home
+              </option>
+              <option value="personal.jpg">
+                Personal
+              </option>
+              <option value="product-detail.jpg">
+                Product Detail 
+              </option>
+              <option value="">
+                Blank (Error)
+              </option>
+            </select>
+          </li>
+          <li>
+            <button class="button-desktop">
+              Desktop
+            </button>
+          </li>
+          <li>
+            <button class="button-tablet">
+              Tablet
+            </button>
+          </li>
+          <li> 
+            <button class="button-mobile">
+              Mobile
+            </button>
+          </li>
+        </ul>
 
       </div>
-      <!-- /.grid-60 -->
+      <!-- /.grid-55 -->
 
-      <div class="grid-40 align-right">
-
-        <!--
-          NOTE:
-
-          Put the name of respective "file.jpg"
-          in the value="…" of each <option>.
-        -->
-
-        <select class="comp-selector">
-          <option value="home.jpg">
-            Home
-          </option>
-          <option value="personal.jpg">
-            Personal
-          </option>
-          <option value="product-detail.jpg">
-            Product Detail
-          </option>
-          <option value="">
-            Blank (Error)
-          </option>
-        </select>
-
+      <div class="grid-45">
+        <h1>Client Name: Visual Design - Round #</h1>
+        <img 
+          class="t7-logo" 
+          alt="TandemSeven" 
+          src="./assets/images/logo-t7-orange.svg" 
+        />
       </div>
-      <!-- /.grid-40 -->
+      <!-- /.grid-45 -->
 
     </div>
     <!-- /.grid-container -->
