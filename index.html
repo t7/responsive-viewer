@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>
+Responsive Viewer
+</title>
+<link rel="stylesheet" href="./assets/css/master.css" />
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header role="banner">
+
+    <div class="grid-container">
+
+      <div class="grid-60">
+
+        <h1>
+          Responsive Viewer
+        </h1>
+
+      </div>
+      <!-- /.grid-60 -->
+
+      <div class="grid-40 align-right">
+
+        <!--
+          NOTE:
+
+          Put the name of respective "file.jpg"
+          in the value="…" of each <option>.
+        -->
+
+        <select class="comp-selector">
+          <option value="home.jpg">
+            Home
+          </option>
+          <option value="personal.jpg">
+            Personal
+          </option>
+          <option value="product-detail.jpg">
+            Product Detail
+          </option>
+          <option value="">
+            Blank (Error)
+          </option>
+        </select>
+
+      </div>
+      <!-- /.grid-40 -->
+
+    </div>
+    <!-- /.grid-container -->
+
+  </header>
+  <!-- role="banner" -->
+
+  <main role="main">
+
+    <div class="grid-container">
+
+      <div class="grid-55">
+        <div class="backdrop-desktop">
+          <div class="screen-desktop">
+            <img alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- /.grid-55 -->
+
+      <div class="grid-30">
+        <div class="backdrop-tablet">
+          <div class="screen-tablet">
+            <img alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- /.grid-30 -->
+
+      <div class="grid-15">
+        <div class="backdrop-mobile">
+          <div class="screen-mobile">
+            <img alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- /.grid-15 -->
+
+    </div>
+    <!-- /.grid-container -->
+
+  </main>
+  <!-- /role="main" -->
+
+</div>
+<!-- /.wrapper -->
+
+<script src="./assets/js/jquery.js"></script>
+<script src="./assets/js/app.js"></script>
+
+</body>
+</html>

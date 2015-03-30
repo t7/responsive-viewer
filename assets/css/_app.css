@@ -1,0 +1,246 @@
+/*
+================================================================================
+Global level.
+================================================================================
+*/
+
+html {
+  box-sizing: border-box;
+
+  /*
+    Prevent over-scroll "bounce" effect,
+    when using a trackpad or touch device.
+
+    Instead, we put scrolling on `wrapper`.
+  */
+  overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #ccc;
+}
+
+/*
+================================================================================
+Wrapper.
+================================================================================
+*/
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /*
+    Put scrolling back, that
+    we removed from <html>.
+  */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*
+================================================================================
+Grid override.
+================================================================================
+*/
+
+.grid-container {
+  max-width: none;
+}
+
+/*
+================================================================================
+Header.
+================================================================================
+*/
+
+header[role="banner"] {
+  background: #666;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 30px;
+}
+
+header[role="banner"] h1 {
+  display: inline;
+  font-weight: normal;
+  margin: 0;
+}
+
+/*
+================================================================================
+Main.
+================================================================================
+*/
+
+main[role="main"] {
+  padding-top: 20px;
+}
+
+/*
+================================================================================
+Helpers.
+================================================================================
+*/
+
+.align-right {
+  text-align: right;
+}
+
+/*
+================================================================================
+Comp selector drop-down.
+================================================================================
+*/
+
+select {
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: inherit;
+  line-height: 1;
+
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+
+  max-width: 100%;
+}
+
+/* For WebKit. */
+@media (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    /* Undo default styling. */
+    -webkit-appearance: none;
+
+    background-image: url("../images/comp-selector.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+
+    padding-right: 40px;
+  }
+}
+
+/*
+================================================================================
+Backdrops.
+================================================================================
+*/
+
+.backdrop-mobile,
+.backdrop-tablet,
+.backdrop-desktop {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin-bottom: 20px;
+  position: relative;
+
+  /*
+    Account for possible SVG clipping.
+  */
+  border-bottom: 5px solid transparent;
+}
+
+.backdrop-mobile {
+  background-image: url("../images/backdrop-mobile.svg");
+  padding-top: 207.6433121%;
+}
+
+.backdrop-tablet {
+  background-image: url("../images/backdrop-tablet.svg");
+  padding-top: 141.2698413%;
+}
+
+.backdrop-desktop {
+  background-image: url("../images/backdrop-desktop.svg");
+  padding-top: 80.2252816%;
+}
+
+/*
+================================================================================
+Screens.
+================================================================================
+*/
+
+.screen-mobile,
+.screen-tablet,
+.screen-desktop {
+  background-color: #fff;
+  background-image: url("../images/screen-error.png");
+  background-repeat: no-repeat;
+  background-position: -999px -999px;
+
+  position: absolute;
+  overflow-y: scroll;
+}
+
+.screen-mobile {
+  top: 15.030674847%;
+  left: 8.917197452%;
+  right: 7.643312102%;
+  bottom: 14.110429448%;
+}
+
+.screen-tablet {
+  top: 9.213483146%;
+  left: 6.666666667%;
+  right: 6.666666667%;
+  bottom: 9.213483146%;
+}
+
+.screen-desktop {
+  top: 5.1482059%;
+  left: 4.1301627%;
+  right: 4.130162703%;
+  bottom: 30.421216849%;
+}
+
+.screen-mobile img,
+.screen-tablet img,
+.screen-desktop img {
+  display: block;
+  width: 100%;
+}
+
+/*
+================================================================================
+Error state (for image not present).
+================================================================================
+*/
+
+.screen-error {
+  background-position: center center;
+}
+
+/*
+================================================================================
+Scrollbars, in WebKit.
+================================================================================
+*/
+
+.screen-mobile::-webkit-scrollbar,
+.screen-tablet::-webkit-scrollbar,
+.screen-desktop::-webkit-scrollbar {
+  width: 6px;
+}
+
+.screen-mobile::-webkit-scrollbar-thumb,
+.screen-tablet::-webkit-scrollbar-thumb,
+.screen-desktop::-webkit-scrollbar-thumb {
+  background: #999;
+  border-left: 1px solid #fff;
+}
