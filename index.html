@@ -36,27 +36,57 @@ Responsive Viewer
                 Personal
               </option>
               <option value="product-detail.jpg">
-                Product Detail 
+                Product Detail
               </option>
               <option value="">
                 Blank (Error)
               </option>
             </select>
           </li>
-          <li>
-            <button class="button-desktop">
+          <li class="faux-button-li">
+            <input
+              value="desktop"
+              type="checkbox"
+              checked="checked"
+              id="_checkbox-desktop"
+            />
+            <label
+              title="Toggle Desktop"
+              class="faux-button-desktop"
+              for="_checkbox-desktop"
+            >
               Desktop
-            </button>
+            </label>
           </li>
-          <li>
-            <button class="button-tablet">
+          <li class="faux-button-li">
+            <input
+              value="tablet"
+              type="checkbox"
+              checked="checked"
+              id="_checkbox-tablet"
+            />
+            <label
+              title="Toggle Tablet"
+              class="faux-button-tablet"
+              for="_checkbox-tablet"
+            >
               Tablet
-            </button>
+            </label>
           </li>
-          <li> 
-            <button class="button-mobile">
+          <li class="faux-button-li">
+            <input
+              value="mobile"
+              type="checkbox"
+              checked="checked"
+              id="_checkbox-mobile"
+            />
+            <label
+              title="Toggle Mobile"
+              class="faux-button-mobile"
+              for="_checkbox-mobile"
+            >
               Mobile
-            </button>
+            </label>
           </li>
         </ul>
 
@@ -65,10 +95,10 @@ Responsive Viewer
 
       <div class="grid-45">
         <h1>Client Name: Visual Design - Round #</h1>
-        <img 
-          class="t7-logo" 
-          alt="TandemSeven" 
-          src="./assets/images/logo-t7-orange.svg" 
+        <img
+          class="t7-logo"
+          alt="TandemSeven"
+          src="./assets/images/logo-t7-orange.svg"
         />
       </div>
       <!-- /.grid-45 -->
@@ -83,7 +113,15 @@ Responsive Viewer
 
     <div class="grid-container">
 
-      <div class="grid-55">
+      <div
+        class="grid-55"
+
+        data-class-all="grid-55"
+        data-class-desktop="grid-100"
+
+        data-class-desktop-tablet="grid-65"
+        data-class-desktop-mobile="grid-75"
+      >
         <div class="backdrop-desktop">
           <div class="screen-desktop">
             <img alt="" />
@@ -92,7 +130,15 @@ Responsive Viewer
       </div>
       <!-- /.grid-55 -->
 
-      <div class="grid-30">
+      <div
+        class="grid-30"
+
+        data-class-all="grid-30"
+        data-class-tablet="grid-70 push-15"
+
+        data-class-desktop-tablet="grid-35"
+        data-class-tablet-mobile="grid-65"
+      >
         <div class="backdrop-tablet">
           <div class="screen-tablet">
             <img alt="" />
@@ -101,7 +147,15 @@ Responsive Viewer
       </div>
       <!-- /.grid-30 -->
 
-      <div class="grid-15">
+      <div
+        class="grid-15"
+
+        data-class-all="grid-15"
+        data-class-mobile="grid-60 push-20"
+
+        data-class-desktop-mobile="grid-25"
+        data-class-tablet-mobile="grid-35"
+      >
         <div class="backdrop-mobile">
           <div class="screen-mobile">
             <img alt="" />

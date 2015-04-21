@@ -13,6 +13,8 @@ var APP = (function(window) {
   var scroll_delay = 16;
 
   // Shared scope.
+  var checkboxes;
+  var columns;
   var comp_selector;
   var img_all;
   var img_desktop;
@@ -176,10 +178,89 @@ var APP = (function(window) {
     scroll_reset();
   }
 
+  // Change column classes.
+  function change_column_classes(x) {
+    // Class name from Unsemantic framework.
+    var hide = 'hide-on-desktop';
+
+    if (typeof x === 'undefined') {
+      columns.attr('class', hide);
+
+      // Exit.
+      return;
+    }
+
+    columns.each(function() {
+      var column = $(this);
+
+      var new_class =
+        column.attr(x) ||
+        hide;
+
+      column.attr('class', new_class);
+    });
+  }
+
+  // Determine which checkboxes are checked.
+  function parse_checkboxes() {
+    var is_desktop;
+    var is_mobile;
+    var is_tablet;
+
+    checkboxes.each(function() {
+      var cb = $(this);
+      var value = cb.val().replace(/\s+/g, '');
+      var is_checked = cb.prop('checked');
+
+      if (value === 'desktop') {
+        is_desktop = is_checked;
+      }
+
+      if (value === 'mobile') {
+        is_mobile = is_checked;
+      }
+
+      if (value === 'tablet') {
+        is_tablet = is_checked;
+      }
+    });
+
+    if (is_desktop && is_tablet && is_mobile) {
+      change_column_classes('data-class-all');
+    }
+    else if (is_desktop && is_mobile) {
+      change_column_classes('data-class-desktop-mobile');
+    }
+    else if (is_desktop && is_tablet) {
+      change_column_classes('data-class-desktop-tablet');
+    }
+    else if (is_tablet && is_mobile) {
+      change_column_classes('data-class-tablet-mobile');
+    }
+    else if (is_desktop) {
+      change_column_classes('data-class-desktop');
+    }
+    else if (is_tablet) {
+      change_column_classes('data-class-tablet');
+    }
+    else if (is_mobile) {
+      change_column_classes('data-class-mobile');
+    }
+    else {
+      change_column_classes();
+    }
+  }
+
   // Run when the page loads.
   $(document).ready(function() {
     // Get the drop-down.
     comp_selector = $('.comp-selector');
+
+    // Get the columns.
+    columns = $('div[data-class-all]');
+
+    // Get the checkboxes.
+    checkboxes = $('.faux-button-li > input');
 
     // Scrollable "screen" areas.
     screen_desktop = $('.screen-desktop');
@@ -214,6 +295,14 @@ var APP = (function(window) {
 
     // Run on first page load.
     switch_comp(comp_selector);
+
+    // Parse checkboxes on page load.
+    parse_checkboxes();
+
+    // Watch for clicks on checkboxes.
+    checkboxes.off('click').on('click', function(e) {
+      parse_checkboxes();
+    });
   });
 
 // Reference to window.

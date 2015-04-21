@@ -44,7 +44,7 @@ Wrapper.
     we removed from <html>.
   */
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 /*
@@ -100,8 +100,8 @@ Comp selector drop-down.
 ================================================================================
 */
 
-button,
-select {
+select,
+.faux-button-li label {
   color: #f5f5f5;
   font-family: Arial, sans-serif;
   font-size: inherit;
@@ -114,13 +114,42 @@ select {
   padding-bottom: 10px;
 
   max-width: 100%;
-  min-height: 38px;
+  height: 38px;
+
+  vertical-align: baseline;
 }
 
 select {
-  min-width: 200px;
-  border: 1px solid #f5f5f5;
   background: none;
+  border: 1px solid #f5f5f5;
+  min-width: 200px;
+}
+
+/* For Firefox. */
+@-moz-document url-prefix() {
+  select {
+    -moz-appearance: none;
+
+    background-image: url("../images/comp-selector.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 40px;
+  }
+
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #fff;
+  }
+
+/*  select::-moz-focus-inner {
+    border: 0 !important;
+    padding: 0 !important;
+    outline: 0 !important;
+  }*/
 }
 
 /* For WebKit. */
@@ -138,27 +167,46 @@ select {
   }
 }
 
-.button-desktop, 
-.button-tablet, 
-.button-mobile {
+.faux-button-li {
+  position: relative;
+}
+
+.faux-button-li input[type="checkbox"] {
+  width: 0;
+  height: 0;
+
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+}
+
+.faux-button-li label {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
-  text-indent: -999px;
+
+  border: 1px solid #555;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  text-indent: -99999px;
+
   width: 38px;
-  border: 0;
-  background-color: rgba(222, 222, 222, 0.2);
 }
 
-.button-desktop {
+.faux-button-li input:checked + label {
+  background-color: #555;
+}
+
+.faux-button-desktop {
   background-image: url("../images/icon-desktop-gray.svg");
 }
 
-.button-tablet {
+.faux-button-tablet {
   background-image: url("../images/icon-tablet-gray.svg");
 }
 
-.button-mobile {
+.faux-button-mobile {
   background-image: url("../images/icon-mobile-gray.svg");
 }
 
@@ -278,7 +326,7 @@ This is the List Styling
 ================================================================================
 */
 
-.list-inline, 
+.list-inline,
 .list-inline li {
   list-style: none;
   margin: 0;
