@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>
+Responsive Viewer
+</title>
+<link rel="stylesheet" href="./assets/css/master.css" />
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header role="banner">
+
+    <div class="grid-container">
+
+      <div class="grid-55">
+
+        <ul class="list-inline">
+          <li>
+            <!--
+              NOTE: THIS IS THE DROPDOWN MENU
+
+              Put the name of respective "file.jpg"
+              in the value="…" of each <option>.
+            -->
+
+            <select class="comp-selector">
+              <option value="home.jpg">
+                Home
+              </option>
+              <option value="personal.jpg">
+                Personal
+              </option>
+              <option value="product-detail.jpg">
+                Product Detail
+              </option>
+              <option value="">
+                Blank (Error)
+              </option>
+            </select>
+          </li>
+          <li class="faux-button-li">
+            <input
+              value="desktop"
+              type="checkbox"
+              checked="checked"
+              id="_checkbox-desktop"
+            />
+            <label
+              title="Toggle Desktop"
+              class="faux-button-desktop"
+              for="_checkbox-desktop"
+            >
+              Desktop
+            </label>
+          </li>
+          <li class="faux-button-li">
+            <input
+              value="tablet"
+              type="checkbox"
+              checked="checked"
+              id="_checkbox-tablet"
+            />
+            <label
+              title="Toggle Tablet"
+              class="faux-button-tablet"
+              for="_checkbox-tablet"
+            >
+              Tablet
+            </label>
+          </li>
+          <li class="faux-button-li">
+            <input
+              value="mobile"
+              type="checkbox"
+              checked="checked"
+              id="_checkbox-mobile"
+            />
+            <label
+              title="Toggle Mobile"
+              class="faux-button-mobile"
+              for="_checkbox-mobile"
+            >
+              Mobile
+            </label>
+          </li>
+        </ul>
+
+      </div>
+      <!-- /.grid-55 -->
+
+      <div class="grid-45">
+        <h1>Client Name: Visual Design - Round #</h1>
+        <img
+          class="t7-logo"
+          alt="TandemSeven"
+          src="./assets/images/logo-t7-orange.svg"
+        />
+      </div>
+      <!-- /.grid-45 -->
+
+    </div>
+    <!-- /.grid-container -->
+
+  </header>
+  <!-- role="banner" -->
+
+  <main role="main">
+
+    <div class="grid-container">
+
+      <div
+        class="grid-55"
+
+        data-class-all="grid-55"
+        data-class-desktop="grid-100"
+
+        data-class-desktop-tablet="grid-65"
+        data-class-desktop-mobile="grid-75"
+      >
+        <div class="backdrop-desktop">
+          <div class="screen-desktop">
+            <img alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- /.grid-55 -->
+
+      <div
+        class="grid-30"
+
+        data-class-all="grid-30"
+        data-class-tablet="grid-70 push-15"
+
+        data-class-desktop-tablet="grid-35"
+        data-class-tablet-mobile="grid-65"
+      >
+        <div class="backdrop-tablet">
+          <div class="screen-tablet">
+            <img alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- /.grid-30 -->
+
+      <div
+        class="grid-15"
+
+        data-class-all="grid-15"
+        data-class-mobile="grid-60 push-20"
+
+        data-class-desktop-mobile="grid-25"
+        data-class-tablet-mobile="grid-35"
+      >
+        <div class="backdrop-mobile">
+          <div class="screen-mobile">
+            <img alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- /.grid-15 -->
+
+    </div>
+    <!-- /.grid-container -->
+
+  </main>
+  <!-- /role="main" -->
+
+</div>
+<!-- /.wrapper -->
+
+<script src="./assets/js/jquery.js"></script>
+<script src="./assets/js/app.js"></script>
+
+</body>
+</html>
