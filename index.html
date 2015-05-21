@@ -114,13 +114,19 @@ Responsive Viewer
 
     <div class="grid-container">
 
+      <!--
+        ====================
+        DESKTOP AREA: START.
+        ====================
+      -->
+
       <div
-        class="grid-55"
-
         data-class-all="grid-55"
-        data-class-desktop="grid-100"
 
-        data-class-desktop-tablet="grid-65"
+        data-class-desktop="grid-90 prefix-5"
+
+        data-class-desktop-tablet="grid-65 suffix-5"
+
         data-class-desktop-mobile="grid-75"
       >
         <div class="backdrop-desktop">
@@ -131,14 +137,26 @@ Responsive Viewer
       </div>
       <!-- /.grid-55 -->
 
+      <!--
+        ==================
+        DESKTOP AREA: END.
+        ==================
+      -->
+
+      <!--
+        ===================
+        TABLET AREA: START.
+        ===================
+      -->
+
       <div
-        class="grid-30"
-
         data-class-all="grid-30"
-        data-class-tablet="grid-70 push-15"
 
-        data-class-desktop-tablet="grid-35"
-        data-class-tablet-mobile="grid-65"
+        data-class-tablet="grid-40 prefix-30"
+        
+        data-class-desktop-tablet="grid-30"
+        
+        data-class-tablet-mobile="grid-35 prefix-15"
       >
         <div class="backdrop-tablet">
           <div class="screen-tablet">
@@ -148,14 +166,26 @@ Responsive Viewer
       </div>
       <!-- /.grid-30 -->
 
+      <!--
+        =================
+        TABLET AREA: END.
+        =================
+      -->
+
+      <!--
+        ===================
+        MOBILE AREA: START.
+        ===================
+      -->
+
       <div
-        class="grid-15"
-
         data-class-all="grid-15"
-        data-class-mobile="grid-60 push-20"
+        
+        data-class-mobile="grid-60 prefix-35"
 
-        data-class-desktop-mobile="grid-25"
-        data-class-tablet-mobile="grid-35"
+        data-class-desktop-mobile="grid-20 prefix-5"
+
+        data-class-tablet-mobile="grid-15"
       >
         <div class="backdrop-mobile">
           <div class="screen-mobile">
@@ -164,6 +194,12 @@ Responsive Viewer
         </div>
       </div>
       <!-- /.grid-15 -->
+
+      <!--
+        =================
+        MOBILE AREA: END.
+        =================
+      -->
 
     </div>
     <!-- /.grid-container -->
